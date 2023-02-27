@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "tasks#index"
+  root "assignments#index"
+  post "assignments/:id/toggle", to: "assignments#toggle"
   
   resources :assignments
 end

@@ -1,0 +1,8 @@
+<div>
+  <h1 class="">Editing Task</h1>
+
+  <turbo-frame id="<%= dom_id @assignment %>">
+    <%= render "form", assignment: @assignment %>
+    <%= link_to "Never Mind", assignments_path, class: "" %>
+  </turbo-frame>
+</div>

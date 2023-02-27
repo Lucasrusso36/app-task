@@ -1,0 +1,20 @@
+<turbo-frame id="<%= dom_id assignment %>" class="block">
+  <%= form_with(model: assignment, class:"") do |form| %>
+    <%= form.check_box :completed, data: {
+                         id: assignment.id,
+                         action: "assignments#toggle"
+                       },
+                       class: "" %>
+    <%= assignment.description %>
+  <% end %>
+
+  <%= link_to "Edit", edit_assignment_path(assignment),
+              class: ""
+  %>
+  <div class="">
+    <%= button_to "Delete", assignment_path(assignment),
+                  method: :delete,
+                  data: { "turbo-frame": "_top" },
+                  class: "" %>
+  </div>
+</turbo-frame>
